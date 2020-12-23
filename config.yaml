@@ -1,0 +1,4 @@
+log_level: TRACE
+write_to_log: true
+write_to_console: true
+log_file: logger.log

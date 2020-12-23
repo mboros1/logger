@@ -1,0 +1,5 @@
+12-23-2020 17:49:18: TRACE: this is a trace
+12-23-2020 17:49:18: DEBUG: some extra debug info
+12-23-2020 17:49:18: INFO: general info here
+12-23-2020 17:49:18: WARNING: warning time
+12-23-2020 17:49:18: ERROR: this is bad
