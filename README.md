@@ -9,4 +9,4 @@ Minimal Java Logging framework, ideal for small programs
 * ASCII color scheme
 
 
-
+![Sample Image](logger.png?raw=true "Logger In Action")
