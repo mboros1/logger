@@ -15,6 +15,22 @@ public class Logger {
         ObjectMapper om = new ObjectMapper(new YAMLFactory());
         try {
             Logger.Config config = om.readValue(new File("config.yaml"), Logger.Config.class);
+            if (config.write_to_log == null){
+                System.out.println("Write to log file not set, defaults to true");
+                config.write_to_log = true;
+            }
+            if (config.log_level == null){
+                System.out.println("Log level not defined: set to default INFO");
+                config.log_level = LOG_LEVEL.INFO;
+            }
+            if (config.write_to_console == null){
+                System.out.println("Write to console not set, defaults to true");
+                config.write_to_console = true;
+            }
+            if (config.log_file == null){
+                System.out.println("Log file path no set, defaults to logger.log");
+                config.log_file = "logger.log";
+            }
             this.config = config;
         } catch (IOException e) {
             System.out.println("Could not find config.yaml file, using defaults");
@@ -104,8 +120,8 @@ public class Logger {
     }
     static class Config {
         private LOG_LEVEL log_level;
-        private boolean write_to_log;
-        private boolean write_to_console;
+        private Boolean write_to_log;
+        private Boolean write_to_console;
         private String log_file;
 
         public LOG_LEVEL getLog_level() {
@@ -117,20 +133,20 @@ public class Logger {
             this.log_level = log_level;
         }
 
-        public boolean isWrite_to_log() {
+        public Boolean isWrite_to_log() {
             return write_to_log;
         }
 
-        public void setWrite_to_log(boolean write_to_log) {
+        public void setWrite_to_log(Boolean write_to_log) {
             System.out.println("Write to log file set to: " + write_to_log);
             this.write_to_log = write_to_log;
         }
 
-        public boolean isWrite_to_console() {
+        public Boolean isWrite_to_console() {
             return write_to_console;
         }
 
-        public void setWrite_to_console(boolean write_to_console) {
+        public void setWrite_to_console(Boolean write_to_console) {
             System.out.println("Write to console set to: " + write_to_console);
             this.write_to_console = write_to_console;
         }
