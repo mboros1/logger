@@ -3,3 +3,13 @@
 12-23-2020 17:49:18: INFO: general info here
 12-23-2020 17:49:18: WARNING: warning time
 12-23-2020 17:49:18: ERROR: this is bad
+12-23-2020 18:50:02: TRACE: this is a trace
+12-23-2020 18:50:02: DEBUG: some extra debug info
+12-23-2020 18:50:02: INFO: general info here
+12-23-2020 18:50:02: WARNING: warning time
+12-23-2020 18:50:02: ERROR: this is bad
+12-24-2020 10:05:27: TRACE: this is a trace
+12-24-2020 10:05:28: DEBUG: some extra debug info
+12-24-2020 10:05:28: INFO: general info here
+12-24-2020 10:05:28: WARNING: warning time
+12-24-2020 10:05:28: ERROR: this is bad

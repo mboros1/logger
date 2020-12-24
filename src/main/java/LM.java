@@ -7,14 +7,14 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Logger {
+public class LM {
     // Singleton class
-    private static Logger logger = null;
-    private Logger(){
+    private static LM logger = null;
+    private LM(){
         this.config = new Config();
         ObjectMapper om = new ObjectMapper(new YAMLFactory());
         try {
-            Logger.Config config = om.readValue(new File("config.yaml"), Logger.Config.class);
+            LM.Config config = om.readValue(new File("config.yaml"), LM.Config.class);
             if (config.write_to_log == null){
                 System.out.println("Write to log file not set, defaults to true");
                 config.write_to_log = true;
@@ -51,9 +51,9 @@ public class Logger {
             e.printStackTrace();
         }
     }
-    public static Logger getInstance(){
+    public static LM getInstance(){
         if (logger == null)
-            logger = new Logger();
+            logger = new LM();
         return logger;
     }
 
